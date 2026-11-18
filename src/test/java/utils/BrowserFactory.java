@@ -11,7 +11,7 @@ public class BrowserFactory {
 
     static WebDriver driver;
 
-    public static WebDriver startBrowser(String browserType, String url){
+    public static WebDriver startBrowser(String browserType, String url) throws InterruptedException {
 
         if (browserType.equalsIgnoreCase("cHrOme")){
             ChromeOptions options = new ChromeOptions();
@@ -30,6 +30,7 @@ public class BrowserFactory {
         }
 
         driver.get(url);
+        Thread.sleep(2000);
         driver.manage().window().maximize();
 
         return driver;

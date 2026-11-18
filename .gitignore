@@ -1,7 +1,7 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
-!**/src/tests.test/**/target/
+!**/src/tests.NdosiTests/**/target/
 .kotlin
 
 ### IntelliJ IDEA ###
@@ -30,7 +30,7 @@ target/
 /.nb-gradle/
 build/
 !**/src/main/**/build/
-!**/src/tests.test/**/build/
+!**/src/tests.NdosiTests/**/build/
 
 ### VS Code ###
 .vscode/
