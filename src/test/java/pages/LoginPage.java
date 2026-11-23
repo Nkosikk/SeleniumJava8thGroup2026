@@ -11,7 +11,7 @@ public class LoginPage {
 
     WebDriver driver;
 
-    By userEmail_id = By.id("email");
+    By userEmail_id = By.id("login-email");
     By userPassword_id = By.id("login-password");
     By loginButton_id = By.id("login-submit");
 
