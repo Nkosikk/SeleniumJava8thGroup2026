@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -13,6 +14,8 @@ public class DashboardPage {
     WebDriver driver;
 
     By dashboardHeader_xpath = By.xpath("//span[contains(text(),'Welcome')]");
+    By menu_xpath = By.xpath("//span[contains(text(),'Menu')]");
+    By logout_xpath = By.xpath("//span[contains(text(),'Logout')]");
 
     public DashboardPage(WebDriver driver){
         this.driver = driver;
@@ -22,5 +25,21 @@ public class DashboardPage {
     public void validateUserLoggedInSuccessfully(){
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(dashboardHeader_xpath));
         driver.findElement(dashboardHeader_xpath).isDisplayed();
+    }
+
+    public void clickMenuButton(){
+        driver.findElement(menu_xpath).click();
+    }
+
+    public void clickLogoutButton(){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(logout_xpath));
+        driver.findElement(logout_xpath).click();
+    }
+
+    public void closeAlertWindow(){
+
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.alertIsPresent());
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
     }
 }

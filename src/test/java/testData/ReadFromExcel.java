@@ -12,6 +12,7 @@ import java.util.List;
 
 public class ReadFromExcel {
 
+
     public static Object[][] getLoginDataFromExcel(String filePath, String sheetName) {
 
         List<Object[]> loginData = new ArrayList<>();
@@ -52,4 +53,5 @@ public class ReadFromExcel {
 
         return loginData.toArray(new Object[0][0]);
     }
+
 }
