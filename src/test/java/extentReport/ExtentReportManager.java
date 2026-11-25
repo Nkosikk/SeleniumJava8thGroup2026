@@ -55,8 +55,8 @@ public class ExtentReportManager implements ITestListener {
 
         try {
             String screenshotName = result.getMethod().getMethodName() + ".png";
-            TakeScreenshots.takesSnapShot(driver, screenshotName);
-            test.addScreenCaptureFromPath("Reports/Screenshots/" + screenshotName);
+            TakeScreenshots.takesSnapShot(driver, result.getMethod().getMethodName());
+            test.addScreenCaptureFromPath(Paths.get("Screenshots", screenshotName).toString().replace("\\", "/"),result.getMethod().getMethodName());
         } catch (Exception e) {
             throw new RuntimeException("Failed to capture screenshot for test case: " + result.getMethod().getMethodName(), e);
         }

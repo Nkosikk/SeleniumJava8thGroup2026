@@ -3,6 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/tests.NdosiTests/**/target/
 .kotlin
+Reports/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
